@@ -120,3 +120,4 @@ ENV/
 
 # Windows
 Thumbs.db
+*.pdf
