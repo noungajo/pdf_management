@@ -37,3 +37,8 @@ def split_pdf(input_pdf_path, output_folder):
 # Example usage:
 input_folder = '/home/benjojo/Documents/projets/pdf_management'
 output_pdf_path = 'merged_output.pdf'  # Path to the merged output PDF file
+
+
+# Example usage:
+input_pdf_path = 'input.pdf'  # Path to the input PDF file
+output_folder = '/home/benjojo/Documents/projets/pdf_management'  # Output folder to save the split PDFs
