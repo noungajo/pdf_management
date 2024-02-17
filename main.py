@@ -12,7 +12,6 @@ def main():
         choix = input()
         try:
             if(int(choix)==1):
-                # Appeler les fonctions pour gérer les PDF
                 input_pdf_path = input("Enter the input pdf path ")
                 output_folder = input("Enter the output folder ")
                 split_pdf(input_pdf_path, output_folder)
@@ -33,7 +32,6 @@ def main():
                 print("Invalid input. Please enter a valid choice.")
         except ValueError:
             if choix.lower() in split.lower() :
-                # Appeler les fonctions pour gérer les PDF
                 input_pdf_path = input("Enter the input pdf path ")
                 output_folder = input("Enter the output folder ")
                 split_pdf(input_pdf_path, output_folder)
@@ -59,21 +57,5 @@ def main():
 if __name__ == "__main__":
     main()
 
-
-# Example usage:
-input_pdf_path = 'input.pdf'  # Path to the input PDF file
-output_pdf_path = 'output.pdf'  # Path to save the output PDF file
-start_page = 2  # Start page (1-indexed)
-end_page = 4  # End page (1-indexed)
-
-# Extract pages 2 to 4 from the input PDF and save them to the output PDF
-extract_pages(input_pdf_path, output_pdf_path, start_page, end_page)
-
-# Example usage:
 input_folder = '/home/benjojo/Documents/projets/pdf_management'
-output_pdf_path = 'merged_output.pdf'  # Path to the merged output PDF file
-
-
-# Example usage:
-input_pdf_path = 'input.pdf'  # Path to the input PDF file
-output_folder = '/home/benjojo/Documents/projets/pdf_management'  # Output folder to save the split PDFs
+output_folder = '/home/benjojo/Documents/projets/pdf_management' 
