@@ -3,7 +3,8 @@ import os
 
 def merge_pdf(input_folder, output_pdf_path):
     pdf_writer = PyPDF2.PdfWriter()
-
+    print(input_folder)
+    print(output_pdf_path)
     # Iterate through each PDF file in the input folder
     for filename in os.listdir(input_folder):
         if filename.endswith('.pdf'):
@@ -20,6 +21,8 @@ def merge_pdf(input_folder, output_pdf_path):
         pdf_writer.write(output_file)
 
 def split_pdf(input_pdf_path, output_folder):
+    print(input_pdf_path)
+    print(output_folder)
     with open(input_pdf_path, 'rb') as file:
         pdf_reader = PyPDF2.PdfReader(file)
         
