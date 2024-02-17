@@ -53,13 +53,35 @@ def split_pdf(input_pdf_path, output_folder):
             with open(output_pdf_path, 'wb') as output_file:
                 pdf_writer.write(output_file)
 
+def extract_pages(input_pdf_path, output_pdf_path, start_page, end_page):
+    """
+    Extracts a range of pages from a PDF file and saves them into a new PDF file.
 
+    Parameters:
+    - input_pdf_path (str): Path to the input PDF file.
+    - output_pdf_path (str): Path to save the output PDF file.
+    - start_page (int): Start page number (1-indexed) to extract.
+    - end_page (int): End page number (1-indexed) to extract.
 
-# Example usage:
-input_folder = '/home/benjojo/Documents/projets/pdf_management'
-output_pdf_path = 'merged_output.pdf'  # Path to the merged output PDF file
+    Returns:
+    None
+    """
+    # Open the input PDF file in read-binary mode
+    with open(input_pdf_path, 'rb') as file:
+        # Create a PDF reader object
+        pdf_reader = PyPDF2.PdfReader(file)
 
+        # Create a PDF writer object
+        pdf_writer = PyPDF2.PdfWriter()
 
-# Example usage:
-input_pdf_path = 'input.pdf'  # Path to the input PDF file
-output_folder = '/home/benjojo/Documents/projets/pdf_management'  # Output folder to save the split PDFs
+        # Loop through the specified page range
+        for page_num in range(int(start_page) - 1, min(int(end_page), len(pdf_reader.pages))): # Adjust page numbers to 0-based index
+            # Get the page object
+            page = pdf_reader.pages[page_num]
+            
+            # Add the page to the PDF writer object
+            pdf_writer.add_page(page)
+            
+        # Write the extracted pages to the output PDF file
+        with open(output_pdf_path, 'wb') as output_file:
+            pdf_writer.write(output_file)
