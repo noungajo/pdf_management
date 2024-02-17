@@ -12,3 +12,12 @@ pip install PyPDF2
 - 3) Create a new PDF writer object for each page.
 - 4) Add the current page to the new PDF writer.
 - 5) Write the new PDF file for each page.
+
+## Merge pdf
+To merge multiple PDF files into a single PDF in Python using PyPDF2, you can follow these steps:
+
+- 1) Open each PDF file.
+- 2) Create a new PDF writer object.
+- 3) Iterate through each page of each PDF file.
+- 4) Add each page to the new PDF writer.
+- 5) Write the new PDF file.
